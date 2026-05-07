@@ -41,7 +41,6 @@ import {
 import ChatAdvisor from "./components/ChatAdvisor";
 import QualityScanner from "./components/QualityScanner";
 import CropDetailModal from "./components/CropDetailModal";
-import { ThemeToggle } from "@/components/ThemeToggle";
 import { GoogleGenAI } from "@google/genai";
 import { useAuth } from "@/hooks/use-auth";
 import { Protected } from "@/components/Protected";
@@ -1561,9 +1560,6 @@ export default function AgriLinkDashboard() {
                 {offlineQueue.length}
               </span>
             )}
-            <div className="scale-90">
-              <ThemeToggle />
-            </div>
             <button 
               onClick={() => setPreferredLang(prev => prev === "en" ? "sw" : "en")}
               className="w-8 h-8 shrink-0 rounded-lg flex items-center justify-center text-[9px] font-black text-neutral-600 dark:text-neutral-400 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-all border border-neutral-200 dark:border-neutral-700 shadow-sm uppercase"
@@ -1603,10 +1599,9 @@ export default function AgriLinkDashboard() {
                />
              </div>
              <div className="flex items-center gap-2">
-               <ThemeToggle />
                <button 
                  onClick={() => setPreferredLang(prev => prev === "en" ? "sw" : "en")}
-                 className="w-10 h-10 rounded-xl flex items-center justify-center text-[10px] font-black text-neutral-600 dark:text-neutral-400 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-all border border-neutral-200 dark:border-neutral-700 shadow-sm uppercase"
+                 className="w-10 h-10 rounded-xl flex items-center justify-center text-[10px] font-black text-neutral-600 bg-neutral-100 hover:bg-neutral-200 transition-all border border-neutral-200 shadow-sm uppercase"
                >
                  {preferredLang === "en" ? "EN" : "SW"}
                </button>
